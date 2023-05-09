@@ -1,0 +1,10 @@
+<h1>{{ current_track['item']['name'] }} by {{ current_track['item']['artists'][0]['name'] }} </h1>
+<h2>key: {{ analysis['track']['key'] }}</h2>
+<h2>tempo: {{ analysis['track']['tempo'] }}</h2>
+<ul>
+    {% for i in range(len(recs) %}
+    <li>{{ recs[i]['name'] }}</li>
+    <li>* key: {{ recs_a[i]['track']['key'] }}</li>
+    <li>* tempo: {{ recs_a[i]['track']['tempo'] }}</li>
+    {% endfor %}
+</ul>
