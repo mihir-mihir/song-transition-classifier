@@ -1,10 +1,13 @@
-<h1>{{ current_track['item']['name'] }} by {{ current_track['item']['artists'][0]['name'] }} </h1>
-<h2>key: {{ analysis['track']['key'] }}</h2>
-<h2>tempo: {{ analysis['track']['tempo'] }}</h2>
+<p>Now Playing: {{ cur_track['name'] }} by {{ cur_track['artists'][0]['name'] }}</p>
+<ul><li>key: {{ cur_features[0]['key'] }}</li>
+    <li>tempo: {{ cur_features[0]['tempo'] }}</li></ul>
+<p>Transition Recommendations:</p>
 <ul>
-    {% for i in range(len(recs) %}
-    <li>{{ recs[i]['name'] }}</li>
-    <li>* key: {{ recs_a[i]['track']['key'] }}</li>
-    <li>* tempo: {{ recs_a[i]['track']['tempo'] }}</li>
+    {% for i in range(n_matches) %}
+    <li>{{ match_tracks[i]['name'] }} by {{ match_tracks[i]['artists'][0]['name'] }}</li>
+    <ul>
+        <li>key: {{ match_features[i]['key'] }}</li>
+        <li>tempo: {{ match_features[i]['tempo'] }}</li>
+    </ul>
     {% endfor %}
 </ul>
