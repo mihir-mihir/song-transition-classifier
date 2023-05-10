@@ -25,7 +25,7 @@ sp_oauth = SpotifyOAuth(client_id=client_id,
 
 @app.route('/')
 def index():
-    rec_node_url = 'http://192.168.64.2:5000'
+    rec_node_url = 'http://10.26.74.50:5000'
     # check if the user is already authenticated
     if 'sp_access_token' in session:
         response = requests.post(f"{rec_node_url}/recommender", json={'token': session['sp_access_token']})
